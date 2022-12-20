@@ -81,13 +81,13 @@ export default function Home() {
             <div className="grid  row-gap-8 lg:grid-cols-2 gap-4 md:gap-12">
               <div className="flex flex-col justify-center text-center md:text-left">
                 <div className="max-w-xl mb-6">
-                  <h1 className="text-5xl font-bold leading-none sm:text-6xl">
+                  <h1 className="text-5xl font-bold leading-none sm:text-6xl text-white">
                     Hi I&apos;m{" "}
                   </h1>
                   <h1 className="text-2xl md:text-5xl font-bold text-violet-400 ">
                     Muhammad Najmuddin
                   </h1>
-                  <p className="mt-6 mb-8 text-lg sm:mb-12">
+                  <p className="mt-6 mb-8 text-lg sm:mb-12 text-white">
                     I&apos;m frontend developer with a strong understanding of
                     blockchain technology and have experience in an incubator
                     program.
@@ -147,10 +147,10 @@ export default function Home() {
 
           <section>
             <div>
-              <h3 className="text-3xl font-bold text-center">
+              <h3 className="text-3xl font-bold text-center text-white">
                 Web3 Project 🚀
               </h3>
-              <p className="text-md py-2 leading-8 text-center ">
+              <p className="text-md py-2 leading-8 text-center text-white">
                 Exploring the Power of Web3: Building a Decentralized
                 Application
               </p>
@@ -272,7 +272,7 @@ export default function Home() {
           {/* Incubator Program and Hackathon  */}
           <section>
             {/* TZApac  */}
-            <h3 className="text-3xl ml-3 font-bold text-center pt-4">
+            <h3 className="text-3xl ml-3 font-bold text-center pt-4 text-white">
               Incubator Program 🎯
             </h3>
             <hr className="my-4 mx-auto w-48 h-1 bg-gray-100 rounded border-0 "></hr>
