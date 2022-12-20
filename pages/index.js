@@ -65,7 +65,7 @@ export default function Home() {
               <li>
                 <a
                   href="Resume Muhammad Najmuddin.pdf" download="Resume Muhammad Najmuddin.pdf"
-                  className="bg-gradient-to-r from-violet-400 via-[#FC82DD] to-[#FF89B0] hover:from-violet-400 hover:to-violet-400 px-4 py-2 ml-8 rounded-md font-bold"
+                  className="bg-gradient-to-r from-violet-400 via-[#FC82DD] to-[#FF89B0] hover:from-violet-400 hover:to-violet-400 px-4 py-2 ml-8 rounded-md font-bold text-white"
                 >
                   Resume
                 </a>
@@ -78,7 +78,7 @@ export default function Home() {
 
           {/* Personal Data  */}
           <section className="px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 ">
-            <div className="grid  row-gap-8 lg:grid-cols-2 gap-4 md:gap-12">
+            <div className="grid lg:grid-cols-2 gap-2 md:gap-12">
               <div className="flex flex-col justify-center text-center md:text-left">
                 <div className="max-w-xl mb-6">
                   <h1 className="text-5xl font-bold leading-none sm:text-6xl text-white">
@@ -295,7 +295,7 @@ export default function Home() {
                       href="https://teztrack.vercel.app/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-orange-300 hover:bg-orange-400 px-4 py-2 mt-6 rounded-md w-32"
+                      className="bg-orange-300 hover:bg-orange-400 px-4 py-2 mt-6 rounded-md w-32 text-white"
                     >
                       Demo
                     </button>
@@ -338,7 +338,7 @@ export default function Home() {
                       href="https://arimzjudin.wixsite.com/kirakripto"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-orange-300 hover:bg-orange-400 px-4 py-2 mt-6 rounded-md w-32"
+                      className="bg-orange-300 hover:bg-orange-400 px-4 py-2 mt-6 rounded-md w-32 text-white"
                     >
                       Landing Page
                     </button>
@@ -350,7 +350,7 @@ export default function Home() {
 
           {/* NFT Gallery  */}
           <section>
-            <h3 className="font-bold text-center text-3xl mb-4">
+            <h3 className="font-bold text-center text-3xl mb-4 text-white">
               NFT Gallery 📸
             </h3>
             <hr className="my-4 mx-auto w-48 h-1 bg-gray-100 rounded border-0 "></hr>
