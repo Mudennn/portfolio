@@ -78,7 +78,7 @@ export default function Home() {
 
           {/* Personal Data  */}
           <section className="px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 ">
-            <div className="grid lg:grid-cols-2 gap-2 md:gap-12">
+            <div className="grid  row-gap-8 lg:grid-cols-2 gap-4 md:gap-12">
               <div className="flex flex-col justify-center text-center md:text-left">
                 <div className="max-w-xl mb-6">
                   <h1 className="text-5xl font-bold leading-none sm:text-6xl text-white">
@@ -475,7 +475,7 @@ export default function Home() {
           </section>
         </section>
 
-        <footer className="py-4 border-t-2 bg-violet-400">
+        <footer className="py-4 border-t-2 bg-violet-400 text-white">
           <p className="text-center">
             Muden<span className="text-sm">©</span> 2022
           </p>
