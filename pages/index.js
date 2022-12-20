@@ -88,7 +88,7 @@ export default function Home() {
                     Muhammad Najmuddin
                   </h1>
                   <p className="mt-6 mb-8 text-lg sm:mb-12">
-                    I'm frontend developer with a strong understanding of
+                    I&apos;m frontend developer with a strong understanding of
                     blockchain technology and have experience in an incubator
                     program.
                   </p>
