@@ -82,7 +82,7 @@ export default function Home() {
               <div className="flex flex-col justify-center text-center md:text-left">
                 <div className="max-w-xl mb-6">
                   <h1 className="text-5xl font-bold leading-none sm:text-6xl">
-                    Hi I'm{" "}
+                    Hi I&apos;m{" "}
                   </h1>
                   <h1 className="text-2xl md:text-5xl font-bold text-violet-400 ">
                     Muhammad Najmuddin
