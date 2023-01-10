@@ -291,14 +291,16 @@ export default function Home() {
                       portfolio tracker, social network, and home base in the
                       Tezos ecosystem.
                     </p>
+                    <div className="mt-6">
                     <a
                       href="https://teztrack.vercel.app/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-orange-300 hover:bg-orange-400 px-4 py-2 mt-6 rounded-md w-32 text-white"
+                      className="bg-orange-300 hover:bg-orange-400 px-4 py-2 rounded-md w-32 text-white"
                     >
                       Demo
                     </a>
+                    </div>
                   </div>
                 </div>
                 <div>
@@ -334,14 +336,16 @@ export default function Home() {
                       accepted by LHDN for digital currecy asset and helps to
                       track all your transaction in real-time.
                     </p>
+                    <div className="mt-6">
                     <a
                       href="https://arimzjudin.wixsite.com/kirakripto"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-orange-300 hover:bg-orange-400 px-4 py-2 mt-6 rounded-md w-32 text-white"
+                      className="bg-orange-300 hover:bg-orange-400 px-4 py-2 rounded-md w-32 text-white"
                     >
                       Landing Page
                     </a>
+                    </div>
                   </div>
                 </div>
               </div>
