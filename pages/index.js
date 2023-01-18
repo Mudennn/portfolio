@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import Head from "next/head";
+
 import {
   AiFillTwitterCircle,
   AiFillLinkedin,
@@ -27,9 +28,10 @@ import {
   SiJavascript,
   SiReact,
 } from "react-icons/si";
+import Link from "next/link";
 
 export default function Home() {
-  const form = useRef();
+  const {form }= useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -65,13 +67,13 @@ export default function Home() {
         {/* Navbar  */}
         <header className="mb-2 px-4 shadow border-b-2 border-black ">
           <div className="relative  flex max-w-screen-lg py-4 sm:flex-row sm:items-center sm:justify-between pt-5 justify-between mx-3 sm:mx-auto ">
-            <a href="/">
+            <Link href="/">
               <Image
                 src={logo}
                 alt="Muhammad Najmuddin Bin Fakhrur Rozi"
                 className="object-cover w-20 aspect-video scale-150"
               />
-            </a>
+            </Link>
             <a
               href="Resume Muhammad Najmuddin.pdf"
               download="Resume Muhammad Najmuddin.pdf"
