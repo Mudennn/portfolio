@@ -30,7 +30,7 @@ import {
 } from "react-icons/si";
 import Link from "next/link";
 
-export default function Home() {
+const Home = () => {
   const form = useRef();
 
   const sendEmail = (e) => {
@@ -573,3 +573,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default Home
