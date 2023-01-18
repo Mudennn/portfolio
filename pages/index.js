@@ -16,7 +16,7 @@ import img5 from "../public/mdec.png";
 import img6 from "../public/Alchemy.png";
 import img7 from "../public/sekolah.jpeg";
 import img8 from "../public/sekolah2.jpeg";
-import img9 from "../public/logo.png";
+
 import img18 from "../public/teztrack.png";
 import img19 from "../public/Hack.png";
 import img20 from "../public/RHB.jpg";
@@ -31,7 +31,7 @@ import {
 import Link from "next/link";
 
 export default function Home() {
-  const Form = useRef();
+  const form = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -40,7 +40,7 @@ export default function Home() {
       .sendForm(
         "service_fffl9yr",
         "template_3x6hyf4",
-        Form.current,
+        form.current,
         "JpKGWHez2QnKag4MD"
       )
       .then(
