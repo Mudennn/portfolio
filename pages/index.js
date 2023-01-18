@@ -194,7 +194,7 @@ export default function Home() {
                     Seeking New Challenges!{" "}
                   </h2>
                   <p className="text-base leading-relaxed  text-gray-500 md:text-lg">
-                    While I'm still new to the industry, I already gained
+                    While I&apos;m still new to the industry, I already gained
                     valuable experience through personal projects, online
                     resources, and participation in incubator programs (TZAPAC
                     and MDEC ideaKita). I also contributed to the development of
