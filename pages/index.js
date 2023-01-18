@@ -31,7 +31,7 @@ import {
 import Link from "next/link";
 
 export default function Home() {
-  const {form }= useRef();
+  const Form = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -40,7 +40,7 @@ export default function Home() {
       .sendForm(
         "service_fffl9yr",
         "template_3x6hyf4",
-        form.current,
+        Form.current,
         "JpKGWHez2QnKag4MD"
       )
       .then(
