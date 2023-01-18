@@ -1,29 +1,24 @@
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
 import Head from "next/head";
-// import { BsFillMoonStarsFill } from "react-icons/bs";
 import {
   AiFillTwitterCircle,
   AiFillLinkedin,
   AiFillGithub,
 } from "react-icons/ai";
-import logo from "../public/Logo.png";
+import logo from "../public/Logo2.png";
 import img1 from "../public/186.png";
 import img2 from "../public/bnwdao.png";
 import img3 from "../public/nftmarketplace.png";
 import img4 from "../public/tzapac.jpg";
 import img5 from "../public/mdec.png";
 import img6 from "../public/Alchemy.png";
-import img7 from "../public/Birdbird.jpg";
-import img8 from "../public/Mixoman.jpg";
-import img9 from "../public/Gamers1.png";
-import img10 from "../public/Gamers2.png";
-import img11 from "../public/Yoot2.png";
-import img12 from "../public/Yoot3.png";
-import img13 from "../public/Yoot4.png";
-import img14 from "../public/lw3dao1.jpg";
-import img15 from "../public/lw3dao2.jpg";
-import img16 from "../public/Roachpunks.jpg";
-import img17 from "../public/cs067.png";
+import img7 from "../public/sekolah.jpeg";
+import img8 from "../public/sekolah2.jpeg";
+import img9 from "../public/logo.png";
 import img18 from "../public/teztrack.png";
+import img19 from "../public/Hack.png";
+import img20 from "../public/RHB.jpg";
 import Image from "next/image";
 import {
   SiTailwindcss,
@@ -33,17 +28,31 @@ import {
   SiReact,
 } from "react-icons/si";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-
-// import required modules
-import { Pagination, Navigation } from "swiper";
-
 export default function Home() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_fffl9yr",
+        "template_3x6hyf4",
+        form.current,
+        "JpKGWHez2QnKag4MD"
+      )
+      .then(
+        (result) => {
+          console.log("message sent!", result.text);
+          alert("Your message has been sent!");
+          e.target.reset();
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
   return (
     <div>
       <Head>
@@ -52,438 +61,511 @@ export default function Home() {
         <link rel="icon" href="/icon.ico" />
       </Head>
 
-      <main className="bg-black w-full">
-
-      <div className="border-b-2 mb-7 pb-5 border-violet-400 px-5">
-        <nav className="pt-5 flex justify-between max-w-5xl mx-auto">
-            {/* <h1 className="text-3xl font-bold font-bungeeshade">Muden</h1> */}
-            <Image src={logo} alt="Muhammad Najmuddin Bin Fakhrur Rozi" className="object-cover w-20 aspect-video scale-150"/>
-            <ul className="flex items-center">
-              {/* <li>
-                <BsFillMoonStarsFill className="cursor-pointer text-2xl" />
-              </li> */}
-              <li>
-                <a
-                  href="Resume Muhammad Najmuddin.pdf" download="Resume Muhammad Najmuddin.pdf"
-                  className="bg-gradient-to-r from-violet-400 via-[#FC82DD] to-[#FF89B0] hover:from-violet-400 hover:to-violet-400 px-4 py-2 ml-8 rounded-md font-bold text-white"
-                >
-                  Resume
-                </a>
-              </li>
-            </ul>
-          </nav>
+      <main className="w-full">
+        {/* Navbar  */}
+        <header className="mb-2 px-4 shadow border-b-2 border-black ">
+          <div className="relative  flex max-w-screen-lg py-4 sm:flex-row sm:items-center sm:justify-between pt-5 justify-between mx-3 sm:mx-auto ">
+            <a href="/">
+              <Image
+                src={logo}
+                alt="Muhammad Najmuddin Bin Fakhrur Rozi"
+                className="object-cover w-20 aspect-video scale-150"
+              />
+            </a>
+            <a
+              href="Resume Muhammad Najmuddin.pdf"
+              download="Resume Muhammad Najmuddin.pdf"
+              className="button2"
+            >
+              Resume
+            </a>
           </div>
-        <section className="h-full max-w-5xl mx-auto ">
-          
+        </header>
 
-          {/* Personal Data  */}
-          <section className="px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 ">
-            <div className="grid  row-gap-8 lg:grid-cols-2 gap-4 md:gap-12">
-              <div className="flex flex-col justify-center text-center md:text-left">
-                <div className="max-w-xl mb-6">
-                  <h1 className="text-5xl font-bold leading-none sm:text-6xl text-white">
-                    Hi I&apos;m{" "}
-                  </h1>
-                  <h1 className="text-2xl md:text-5xl font-bold text-violet-400 ">
-                    Muhammad Najmuddin
-                  </h1>
-                  <p className="mt-6 mb-8 text-lg sm:mb-12 text-white">
-                    I&apos;m frontend developer with a strong understanding of
-                    blockchain technology and have experience in an incubator
-                    program.
-                  </p>
-                  <div className="text-3xl flex items-center justify-center md:justify-start gap-4">
-                    <a
-                      href="https://twitter.com/Mudennn"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <AiFillTwitterCircle className="hover:text-violet-400" />
-                    </a>
-                    <a
-                      href="https://www.linkedin.com/in/muhammad-najmuddin/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <AiFillLinkedin className="hover:text-violet-400" />
-                    </a>
-                    <a
-                      href="https://github.com/Mudennn"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <AiFillGithub className="hover:text-violet-400" />
-                    </a>
+        {/* Hero  */}
+        <section>
+          <div className="px-4 py-12 mx-auto max-w-7xl sm:px-6 md:px-12 lg:px-24 lg:py-24">
+            <div className="flex flex-wrap items-center mx-auto max-w-7xl">
+              <div className="flex flex-col items-start mt-12 mb-16  lg:flex-grow lg:w-1/2 lg:pr-6 xl:pr-24 md:mb-0 xl:mt-0">
+                <h1 className="text-4xl font-bold leading-none tracking-tighter text-gray-500 md:text-7xl lg:text-5xl ">
+                  {" "}
+                  Hi I&apos;m{" "}
+                </h1>
+                <h1 className="relative inline-flex text-4xl font-bold leading-none tracking-tighter text-black md:text-7xl lg:text-5xl ">
+                  <svg
+                    className="absolute -bottom-11 w-2/3 text-black sm:block"
+                    viewBox="0 0 490 42"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10.6312 17.089C14.4676 17.089 18.4867 16.911 22.3231 16.733C23.9673 16.733 25.4288 16.555 27.073 16.555C34.0151 16.199 40.9571 15.8429 47.8992 15.4869C56.3028 15.1309 64.5237 14.5969 72.9272 14.2408C84.8018 13.5288 96.6764 12.9948 108.551 12.2827C111.291 12.1047 114.032 12.1047 116.772 11.9267C123.714 11.5707 130.656 11.2147 137.598 11.0366C144.54 10.6806 151.482 10.3246 158.424 10.1466C161.165 9.96859 163.905 9.79058 166.645 9.79058C177.606 9.43455 188.75 9.07853 199.712 8.72251C206.471 8.5445 213.23 8.36649 220.172 8.01047C222.913 8.01047 225.47 7.83246 228.211 7.83246C238.806 7.65445 249.585 7.47644 260.181 7.29843C270.776 7.12042 281.19 6.94241 291.785 6.7644C294.526 6.7644 297.266 6.7644 300.189 6.7644C307.131 6.7644 313.89 6.7644 320.832 6.7644C331.611 6.7644 342.207 6.7644 352.985 6.58639C356.456 6.58639 359.927 6.58639 363.398 6.58639C370.706 6.58639 378.013 6.58639 385.321 6.58639C385.869 6.58639 386.6 6.58639 387.148 6.58639C370.706 6.7644 354.081 6.94241 337.64 7.29843C330.698 7.47644 323.938 7.47644 316.996 7.65445C314.073 7.65445 310.967 7.65445 308.044 7.83246C297.997 8.01047 288.132 8.36649 278.084 8.5445C266.575 8.90052 255.065 9.07853 243.556 9.43455C241.547 9.43455 239.72 9.61256 237.71 9.61256C231.499 9.96859 225.47 10.1466 219.259 10.5026C206.836 11.0366 194.414 11.5707 181.991 12.1047C180.164 12.1047 178.337 12.2827 176.51 12.4607C170.482 12.8168 164.27 13.3508 158.242 13.7068C147.281 14.4188 136.502 15.1309 125.541 15.8429C122.618 16.0209 119.512 16.377 116.589 16.555C109.647 17.089 102.705 17.623 95.763 18.3351C86.9941 19.0471 78.0424 19.7592 69.2735 20.4712C57.0335 21.5393 44.6109 22.6073 32.3709 23.6754C29.4479 23.8534 26.5249 24.2094 23.4193 24.3874C18.1213 24.9215 12.8234 25.4555 7.52554 25.9895C6.97749 25.9895 6.42943 26.3455 6.42943 27.0576C6.42943 27.5916 6.97749 28.1257 7.52554 28.1257C9.53509 28.1257 11.362 28.3037 13.3715 28.3037C13.0061 29.1937 12.8234 29.7277 12.8234 30.2618C12.8234 32.2199 14.4676 34 16.6599 34C31.8228 33.1099 46.8031 32.0419 61.9661 31.3298C75.1195 30.7958 88.2729 30.0838 101.426 29.5497C115.859 28.8377 130.473 28.1257 144.906 27.5916C149.473 27.4136 154.04 27.2356 158.607 26.8796C159.886 26.8796 161.165 26.7016 162.626 26.7016C186.01 26.1675 209.394 25.4555 232.778 24.9215C245.2 24.5654 257.806 24.2094 270.228 24.0314C274.796 23.8534 279.18 23.8534 283.747 23.6754C307.679 23.3194 331.611 22.9634 355.543 22.6073C365.773 22.4293 376.004 22.2513 386.234 22.0733C395.003 21.8953 403.772 21.8953 412.541 21.5393C419.848 21.3613 426.973 21.0052 434.281 20.8272C437.934 20.6492 441.588 20.6492 445.059 20.4712C453.28 19.9372 461.501 19.4031 469.722 18.8691C469.174 19.5812 469.174 20.6492 469.356 21.3613C469.539 22.2513 470.087 22.9633 471.001 23.3194C471.731 23.6754 472.827 24.0314 473.558 23.6754C475.385 22.9634 477.212 22.2513 478.856 21.5393C478.856 21.5393 478.856 21.5393 478.673 21.5393C478.856 21.5393 478.856 21.3613 479.039 21.3613C479.221 21.3613 479.404 21.1832 479.404 21.1832H479.221C480.135 20.8272 481.048 20.4712 482.144 19.9372C483.058 19.5812 484.154 19.0471 485.067 18.6911C486.164 18.1571 487.077 17.623 488.173 17.089C489.269 16.555 490 15.1309 490 13.8848C490 13.1728 489.817 12.6387 489.452 11.9267C489.087 11.2147 488.173 10.3246 487.26 10.1466C486.346 9.96859 485.433 9.79058 484.519 9.79058C484.337 9.79058 484.154 9.79058 483.971 9.79058C483.423 9.79058 482.693 9.79058 482.144 9.96859C480.683 10.1466 479.404 10.3246 477.943 10.3246C476.847 10.3246 475.75 10.5026 474.472 10.5026C471.366 10.6806 468.443 10.8586 465.337 11.2147C464.607 11.2147 463.693 11.3927 462.962 11.3927C463.328 11.0366 463.51 10.6806 463.51 10.3246C463.693 9.96859 463.693 9.61257 463.693 9.25654C463.693 9.07853 463.693 8.72251 463.876 8.5445C463.876 8.18848 463.876 7.83246 463.693 7.65445C463.693 7.65445 463.876 7.65445 463.876 7.47644C464.424 7.12042 464.972 6.7644 465.337 6.05236C465.703 5.51832 465.885 4.80628 465.885 4.09424C465.885 3.3822 465.703 2.84817 465.337 2.13613C465.155 1.95812 464.972 1.60209 464.789 1.42408C464.241 0.890052 463.693 0.712042 463.145 0.534031C462.049 0.17801 460.77 0 459.491 0C458.395 0 457.482 0 456.386 0C454.924 0 453.463 0 452.001 0C449.992 0 447.799 0 445.79 0C440.309 0 434.829 0 429.348 0C424.233 0 418.935 0 413.82 0C409.07 0 404.503 0 399.753 0C380.936 0 362.302 0.17801 343.486 0.356021C329.419 0.534031 315.352 0.712042 301.285 0.712042C295.074 0.712042 288.68 0.890052 282.468 1.06806C268.402 1.42408 254.335 1.60209 240.268 1.95812C236.249 1.95812 232.23 2.13613 228.211 2.13613C225.836 2.13613 223.643 2.31414 221.268 2.31414C207.384 2.84817 193.5 3.3822 179.616 3.91623C175.414 4.09424 171.212 4.27225 166.828 4.45026C164.453 4.45026 162.078 4.62827 159.703 4.80628C145.819 5.51832 132.118 6.23037 118.233 6.94241C111.109 7.29843 103.984 7.65445 96.8591 8.18848C84.6192 8.90052 72.3792 9.61256 60.3219 10.5026C49.7261 11.2147 39.1303 11.7487 28.5345 12.2827C26.8903 12.4607 25.2461 12.4607 23.4193 12.6387C20.679 12.8168 17.9387 12.8168 15.1984 12.9948C12.8234 13.7068 10.2658 13.7068 7.89092 13.7068C7.70823 12.9948 6.97749 12.4607 6.42943 12.6387C4.78525 12.6387 3.32376 12.8168 1.67958 12.9948C0.948839 13.1728 0.218094 13.5288 0.0354073 14.2408C-0.147279 15.1309 0.40078 16.0209 1.13152 16.199C1.86227 16.377 2.59301 16.555 3.32376 16.733C4.05451 16.911 4.60256 16.911 5.33331 16.911C7.16017 17.089 8.80435 17.089 10.6312 17.089ZM438.117 11.3927C440.309 11.3927 442.684 11.3927 444.876 11.3927C445.059 11.9267 445.425 12.2827 445.79 12.6387C444.876 12.6387 443.963 12.8168 443.232 12.8168C441.588 12.8168 439.944 12.9948 438.3 12.9948C430.992 13.1728 423.868 13.5288 416.56 13.7068C413.272 13.8848 409.983 14.0628 406.695 14.0628C401.58 14.0628 396.282 14.2408 391.167 14.2408C379.292 14.4188 367.6 14.5969 355.726 14.7749C332.707 15.1309 309.871 15.4869 286.853 15.8429C270.411 16.0209 253.969 16.555 237.528 17.089C212.865 17.801 188.02 18.3351 163.357 19.0471C158.424 19.2251 153.492 19.4031 148.559 19.7592C134.493 20.4712 120.426 21.0052 106.359 21.7173C92.6573 22.4293 78.7732 22.9634 65.0717 23.6754C63.7929 23.6754 62.5141 23.8534 61.2353 23.8534C64.889 23.4974 68.7254 23.3194 72.3792 22.9633C85.3499 22.0733 98.3206 21.0052 111.291 20.1152C115.859 19.7592 120.426 19.4031 124.81 19.0471C127.185 18.8691 129.56 18.6911 131.752 18.6911C145.454 17.9791 158.972 17.089 172.491 16.377C175.049 16.199 177.789 16.0209 180.347 15.8429C184.183 15.6649 188.02 15.4869 191.673 15.4869C205.557 14.9529 219.442 14.4188 233.326 13.8848C236.431 13.7068 239.537 13.7068 242.46 13.5288C243.191 13.5288 244.104 13.5288 244.835 13.5288C247.027 13.5288 249.219 13.5288 251.229 13.3508C265.113 12.9948 279.18 12.8168 293.064 12.4607C299.458 12.2827 305.852 12.1047 312.246 12.1047C332.89 11.9267 353.716 11.7487 374.36 11.5707C395.917 11.5707 417.108 11.3927 438.117 11.3927Z"
+                      fill="currentColor"
+                    />
+                    <path
+                      d="M38 42C38.5523 42 39 41.5523 39 41C39 40.4477 38.5523 40 38 40C37.4477 40 37 40.4477 37 41C37 41.5523 37.4477 42 38 42Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  Muhammad Najmuddin!
+                </h1>
+                <p className="mb-8 mt-14 text-base leading-relaxed text-left text-gray-500">
+                  I&apos;m frontend developer with a strong understanding of
+                  blockchain technology and have experience in an incubator
+                  program.
+                </p>
+                <div className="text-3xl flex items-center justify-center md:justify-start gap-4">
+                  <a
+                    href="https://twitter.com/Mudennn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <AiFillTwitterCircle className="hover:text-blue-800" />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/muhammad-najmuddin/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <AiFillLinkedin className="hover:text-blue-800" />
+                  </a>
+                  <a
+                    href="https://github.com/Mudennn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <AiFillGithub className="hover:text-blue-800" />
+                  </a>
+                </div>
+              </div>
+
+              <div className="w-full lg:max-w-lg lg:w-1/2 rounded-xl">
+                <div>
+                  <div className="relative w-full max-w-lg">
+                    <div className="absolute top-0 rounded-full bg-gray-300 -left-4 w-72 h-72 mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+
+                    <div className="absolute rounded-full bg-gray-300 -bottom-24 right-20 w-72 h-72 mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+                    <div className="relative">
+                      <Image
+                        className="object-cover object-center mx-auto rounded-lg shadow-2xl"
+                        alt="Muhammad Najmuddin"
+                        src={img1}
+                      />
+                    </div>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* additional info  */}
+        <section className="w-full ">
+          <div className="px-4 py-16 mx-auto max-w-7xl sm:px-6 md:px-12 lg:px-24 lg:py-24">
+            <div className="grid gap-10 lg:grid-cols-2 mx-1">
+              <div className="flex items-center justify-center ">
+                <div className="flex flex-col items-end px-3">
+                  <Image
+                    className="object-cover mb-6 rounded shadow-lg h-28 sm:h-48 xl:h-56 w-28 sm:w-48 xl:w-56"
+                    src={img6}
+                    alt="Alchemy University"
+                  />
+                  <Image
+                    className="object-cover w-20 h-20 rounded shadow-lg sm:h-32 xl:h-40 sm:w-32 xl:w-40"
+                    src={img8}
+                    alt="Mysekolah Kripto"
+                  />
+                </div>
+                <div className="px-3">
+                  <Image
+                    className="object-cover bg-top w-40 h-40 rounded shadow-lg sm:h-64 xl:h-80 sm:w-64 xl:w-80"
+                    src={img7}
+                    alt="Sekolah Lab tech"
+                  />
+                </div>
+              </div>
+              <div className="flex flex-col justify-center md:pr-8 xl:pr-0 lg:max-w-lg">
+                <div className="max-w-xl mb-6">
+                  <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
+                    Web3 Enthusiast
+                    <br className="hidden md:block" />
+                    Seeking New Challenges!{" "}
+                  </h2>
+                  <p className="text-base leading-relaxed  text-gray-500 md:text-lg">
+                    While I'm still new to the industry, I already gained
+                    valuable experience through personal projects, online
+                    resources, and participation in incubator programs (TZAPAC
+                    and MDEC ideaKita). I also contributed to the development of
+                    MySekolahKripto, a platform that provides education on
+                    cryptocurrency, and Web3, and have experience building and
+                    growing a community for the platform.
+                  </p>
+                </div>
+                <hr className=" border-gray-700" />
+                <div>
+                  <h3 className="text-center sm:text-left text-black font-bold text-xl mt-8 mb-3">
+                    My Skills
+                  </h3>
+                  <div className="mb-10 ">
+                    <div className="flex items-center justify-center sm:justify-start col-span-1 md:col-span-2 lg:col-span-1 text-4xl gap-5 ">
+                      <SiHtml5 className="h-8 fill-current text-gray-500 hover:text-black" />
+                      <SiCss3 className="h-8 fill-current text-gray-500 hover:text-black" />
+                      <SiJavascript className="h-8 fill-current text-gray-500 hover:text-black" />
+                      <SiReact className="h-8 fill-current text-gray-500 hover:text-black" />
+                      <SiTailwindcss className="h-8 fill-current text-gray-500 hover:text-black" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Logo  */}
+
+        {/* incubator  */}
+        <div className="mx-5 mt-0 sm:mt-8">
+          <div className="mx-auto w-[15rem] sm:w-[32rem]  z-10 relative -mb-9 ">
+            <h3 className="text-xl sm:text-3xl font-bold text-center py-4 border-2 pb-3 border-black rounded-lg bg-white ">
+              Incubator Program 🎯
+            </h3>
+          </div>
+          <div className="px-4 py-12 mx-auto max-w-7xl sm:px-6 md:px-12 lg:px-24 lg:py-24 border-black border-2 rounded-lg z-1">
+            <div className="grid gap-10 lg:grid-cols-2 items-center shadow-lg p-5 rounded-lg">
+              <div className="lg:pr-10">
+                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-black text-white font-bold text-2xl mb-5">
+                  1
+                </div>
+
+                <h5 className="mb-4 text-4xl font-extrabold leading-none">
+                  Teztrack
+                </h5>
+                <p className="text-base font-semibold md:text-lg mb-4">
+                  Egg Web3 Incubator Cohort #1
+                </p>
+                <p className="mb-6 text-gray-900">
+                  Teztrack is designed to provide users with an all-in-one
+                  portfolio tracker, social network, and home base in the Tezos
+                  ecosystem.
+                </p>
+                <hr className="mb-5 border-gray-300" />
+                <div className="flex items-center justify-center sm:justify-start space-x-4">
+                  <a
+                    href="https://teztrack.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="button3"
+                  >
+                    Demo
+                  </a>
+                  <a
+                    href="https://github.com/Mudennn/teztrack"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="button4"
+                  >
+                    Github
+                  </a>
                 </div>
               </div>
               <div>
                 <Image
-                  className="object-contain w-full h-56 rounded shadow-md sm:h-96"
-                  src={img1}
-                  alt="Muhammad Najmuddin Bin Fakhrur Rozi"
+                  className="object-contain w-full h-56 rounded sm:h-96"
+                  src={img4}
+                  alt=""
                 />
               </div>
             </div>
-          </section>
 
-          {/* Logo  */}
-          <section className="px-5">
-            <h2 className="text-center text-violet-400 text-xl mt-8 mb-3">
-              My Skills
-            </h2>
-            <div className="max-w-xl rounded-xl mx-auto mb-10 border-violet-400 border-2  p-5">
-              <div className="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1 text-4xl gap-5 ">
-                <SiHtml5 className="h-12 fill-current text-white" />
-                <SiCss3 className="h-12 fill-current text-white" />
-                <SiJavascript className="h-12 fill-current text-white" />
-                <SiReact className="h-12 fill-current text-white" />
-                <SiTailwindcss className="h-12 fill-current text-white" />
+            <div className="grid gap-10 lg:grid-cols-2 items-center shadow-lg p-5 mt-8 rounded-lg">
+              <div className="order-2 sm:order-1">
+                <Image
+                  className="object-contain aspect-video w-full h-56 rounded sm:h-96"
+                  src={img5}
+                  alt=""
+                />
               </div>
-            </div>
-          </section>
-
-          {/* Web3 Project  */}
-
-          <section>
-            <div>
-              <h3 className="text-3xl font-bold text-center text-white">
-                Web3 Project 🚀
-              </h3>
-              <p className="text-md py-2 leading-8 text-center text-white">
-                Exploring the Power of Web3: Building a Decentralized
-                Application
-              </p>
-              <hr className="mt-2 mx-auto w-48 h-1 bg-gray-100 rounded border-0"></hr>
-            </div>
-
-            <div className="px-4 py-10 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
-              <div className="grid gap-8 lg:grid-cols-3 sm:max-w-sm sm:mx-auto lg:max-w-full">
-                <div className="overflow-hidden transition-shadow duration-300 bg-white rounded shadow-sm">
-                  <Image
-                    src={img18}
-                    className="h-40 w-full rounded-md object-cover aspect-video"
-                    alt="teztrack"
-                  />
-                  <div className="p-5 border border-t-0">
-                    <p className="mb-3 font-bold text-black tracking-wide uppercase">
-                      Teztrack
-                    </p>
-                    <p className="mb-3 text-gray-700 text-sm">
-                      One stop center for Tezos ecosystem. Where users can
-                      access to data and insight and explore the latest project
-                      in Tezos ecosystem.
-                    </p>
-                    <div className="flex items-center justify-center gap-2 mt-2 ">
-                      <a
-                        href="https://teztrack.vercel.app/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className=" bg-violet-400 hover:bg-violet-700 p-1 rounded-sm w-full text-center"
-                      >
-                        Demo
-                      </a>
-                      <a
-                        href="https://github.com/Mudennn/teztrack"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-black p-1 rounded-sm bg-orange-300 hover:bg-orange-400 w-full text-center"
-                      >
-                        Github
-                      </a>
-                    </div>
-                  </div>
+              <div className="lg:pr-10 order-1 sm:order-2">
+                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-black text-white font-bold text-2xl mb-5">
+                  2
                 </div>
 
-                <div className="overflow-hidden transition-shadow duration-300 bg-white rounded shadow-sm">
-                  <Image
-                    src={img2}
-                    className="h-40 w-full rounded-md object-cover aspect-video"
-                    alt="teztrack"
-                  />
-                  <div className="p-5 border border-t-0">
-                    <p className="mb-3 font-bold text-black tracking-wide uppercase">
-                      BNW DAO
-                    </p>
-                    <p className="mb-3 text-gray-700 text-sm">
-                      BNW DAO is a DAO that only for people who love
-                      black and white photo. Only people who have certain
-                      NFT can enter this DAO.
-                    </p>
-                    <div className="flex items-center justify-center gap-2 mt-2 ">
-                      <a
-                        href="https://bnwdao.vercel.app/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className=" bg-violet-400 hover:bg-violet-700 p-1 rounded-sm w-full text-center"
-                      >
-                        Demo
-                      </a>
-                      <a
-                        href="https://github.com/Mudennn/buildspace-dao-starter"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-black p-1 rounded-sm bg-orange-300 hover:bg-orange-400 w-full text-center"
-                      >
-                        Github
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="overflow-hidden transition-shadow duration-300 bg-white rounded shadow-sm">
-                  <Image
-                    src={img3}
-                    className="h-40 w-full rounded-md object-cover aspect-video"
-                    alt="teztrack"
-                  />
-                  <div className="p-5 border border-t-0">
-                    <p className="mb-3 font-bold text-black tracking-wide uppercase">
-                      NFT Marketplace
-                    </p>
-                    <p className="mb-3 text-gray-700 text-sm">
-                      Marketplace tha allows users to buy, sell and trade unique digital
-                       items that represented by an NFT. Deployed
-                       on georli testnet.
-                    </p>
-                    <div className="flex items-center justify-center gap-2 mt-2 ">
-                      <a
-                        href="https://muden-nftmarketplace.vercel.app/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className=" bg-violet-400 hover:bg-violet-700 p-1 rounded-sm w-full text-center"
-                      >
-                        Demo
-                      </a>
-                      <a
-                        href="https://github.com/Mudennn/Personal-Project/tree/main/NFT-Marketplace"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-black p-1 rounded-sm bg-orange-300 hover:bg-orange-400 w-full text-center"
-                      >
-                        Github
-                      </a>
-                    </div>
-                  </div>
+                <h5 className="mb-4 text-4xl font-extrabold leading-none">
+                  MDEC
+                </h5>
+                <p className="text-base  font-semibold md:text-lg mb-4">
+                  ideaKita
+                </p>
+                <p className="mb-6 text-gray-900">
+                  KiraKripto helps generate proper tax documentation accepted by
+                  LHDN for digital currecy asset and helps to track all your
+                  transaction in real-time.
+                </p>
+                <hr className="mb-5 border-gray-300" />
+                <div className="flex items-center justify-center sm:justify-start space-x-4">
+                  <a
+                    href="https://arimzjudin.wixsite.com/kirakripto"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="button3"
+                  >
+                    Landing Page
+                  </a>
                 </div>
               </div>
             </div>
-          </section>
-          {/* Incubator Program and Hackathon  */}
-          <section>
-            {/* TZApac  */}
-            <h3 className="text-3xl ml-3 font-bold text-center pt-4 text-white">
-              Incubator Program 🎯
+          </div>
+        </div>
+
+        {/* Hackathon  */}
+        <section className="mt-20 ">
+          <div className=" border-2 border-black w-[15rem] sm:w-[32rem] mx-auto p-4 rounded-lg z-10 -mb-8">
+            <h3 className="text-xl sm:text-3xl font-bold text-center ">
+              Hackathon 🚀
             </h3>
-            <hr className="my-4 mx-auto w-48 h-1 bg-gray-100 rounded border-0 "></hr>
-            <div className="px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 ">
-              <div className="grid  row-gap-8 lg:grid-cols-2 gap-4 md:gap-12">
-                <div className="flex flex-col justify-center text-center md:text-left">
-                  <div className="max-w-xl mb-6">
-                    <h2 className="max-w-lg  font-sans text-3xl font-bold tracking-tight text-violet-400 sm:text-4xl sm:leading-none">
-                      TZAPAC
-                    </h2>
-                    <p className="text-base text-white font-semibold md:text-lg mb-6">
-                      Egg Web3 Incubator Cohort #1
-                    </p>
-                    <p className="text-base text-gray-400 md:text-lg">
-                      Teztrack is designed to provide users with an all-in-one
-                      portfolio tracker, social network, and home base in the
-                      Tezos ecosystem.
-                    </p>
-                    <div className="mt-6">
+          </div>
+          <div className="px-4  mx-2 sm:mx-auto max-w-7xl sm:px-6 md:px-12 lg:px-24 py-10 lg:py-24">
+            <div className="grid gap-8 lg:grid-cols-2 sm:max-w-sm sm:mx-auto lg:max-w-full">
+              <div className="card">
+                <Image
+                  src={img19}
+                  className="h-40 w-full rounded-md object-cover aspect-video"
+                  alt="Hack-a-tech fintech"
+                />
+                <div className="p-5 border border-t-0">
+                  <p className="text-xl font-bold text-black tracking-wide uppercase">
+                    Hack-A-Tech Fintech
+                  </p>
+                  <p className="mb-3 text-gray-700 text-sm">EduHub Tech</p>
+                  <p className="mb-3 text-gray-700 text-sm">
+                    Eduhub Tech is an educational platform for blockchain, web
+                    3.0 and crypto technology.
+                  </p>
+                  <div className="flex items-center justify-start gap-2 mt-4 ">
+                    <a
+                      href=""
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className=" button3"
+                    >
+                      Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="card">
+                <Image
+                  src={img20}
+                  className="h-40 w-full rounded-md object-cover aspect-video object-top"
+                  alt="RHB"
+                />
+                <div className="p-5 border border-t-0">
+                  <p className="text-xl font-bold text-black tracking-wide uppercase">
+                    RHB
+                  </p>
+                  <p className="mb-3 text-gray-700 text-sm">IDverse</p>
+                  <p className="mb-3 text-gray-700 text-sm">
+                    Blockchain-Powered KYC Solution for the Banking, Financial
+                    services & Insurance (BFSI) industry.
+                  </p>
+                  <div className="flex items-center justify-start gap-2 mt-4 ">
+                    <a
+                      href=""
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className=" button3"
+                    >
+                      Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* web3 project  */}
+        <section className="mt-12">
+          <div className="border-2 border-black w-[15rem] sm:w-[32rem] mx-auto p-4 rounded-lg z-10 -mb-5 sm:-mb-14">
+            <h3 className="text-xl sm:text-3xl font-bold text-center ">
+              Web3 Project 🚀
+            </h3>
+            <p className="text-md py-2 text-center">
+              Exploring the Power of Web3: Building a Decentralized Application
+            </p>
+          </div>
+
+          <div className="px-4 py-10 mx-2 sm:mx-auto max-w-7xl sm:px-6 md:px-12 lg:px-24 lg:py-24 ">
+            <div className="grid gap-8 lg:grid-cols-3 sm:max-w-sm sm:mx-auto lg:max-w-full">
+              <div className="overflow-hidden transition-shadow duration-300 bg-white shadow-lg rounded-lg ">
+                <Image
+                  src={img18}
+                  className="h-40 w-full rounded-md object-cover aspect-video"
+                  alt="teztrack"
+                />
+                <div className="p-5 border border-t-0">
+                  <p className="mb-3 font-bold text-black tracking-wide uppercase">
+                    Teztrack
+                  </p>
+                  <p className="mb-3 text-gray-700 text-sm">
+                    One stop center for Tezos ecosystem. Where users can access
+                    to data and insight and explore the latest project in Tezos
+                    ecosystem.
+                  </p>
+                  <div className="flex items-center justify-center sm:justify-start gap-2 mt-4 ">
                     <a
                       href="https://teztrack.vercel.app/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-orange-300 hover:bg-orange-400 px-4 py-2 rounded-md w-32 text-white"
+                      className=" button3"
                     >
                       Demo
                     </a>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <Image
-                    className="object-contain w-full h-56 rounded shadow-lg sm:h-96"
-                    src={img4}
-                    alt=""
-                  />
-                </div>
-              </div>
-            </div>
-
-            {/* MDEC  */}
-            <div className="px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
-              <div className="flex flex-col-reverse md:grid gap-4 md:gap-12 row-gap-8 lg:grid-cols-2  ">
-                <div>
-                  <Image
-                    className="object-contain aspect-video w-full h-56 rounded shadow-lg sm:h-96"
-                    src={img5}
-                    alt="mdec ideakita"
-                  />
-                </div>
-                <div className="flex flex-col justify-center text-center md:text-left">
-                  <div className="max-w-xl mb-6">
-                    <h2 className="max-w-lg  font-sans text-3xl font-bold tracking-tight text-violet-400 sm:text-4xl sm:leading-none">
-                      MDEC
-                    </h2>
-                    <p className="text-base text-white font-semibold md:text-lg mb-6">
-                      ideaKita
-                    </p>
-                    <p className="text-base  md:text-lg text-gray-400">
-                      KiraKripto helps generate proper tax documentation
-                      accepted by LHDN for digital currecy asset and helps to
-                      track all your transaction in real-time.
-                    </p>
-                    <div className="mt-6">
                     <a
-                      href="https://arimzjudin.wixsite.com/kirakripto"
+                      href="https://github.com/Mudennn/teztrack"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-orange-300 hover:bg-orange-400 px-4 py-2 rounded-md w-32 text-white"
+                      className="button4"
                     >
-                      Landing Page
+                      Github
                     </a>
-                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="overflow-hidden transition-shadow duration-300 bg-white shadow-lg rounded-lg">
+                <Image
+                  src={img2}
+                  className="h-40 w-full rounded-md object-cover aspect-video"
+                  alt="teztrack"
+                />
+                <div className="p-5 border border-t-0">
+                  <p className="mb-3 font-bold text-black tracking-wide uppercase">
+                    BNW DAO
+                  </p>
+                  <p className="mb-3 text-gray-700 text-sm">
+                    BNW DAO is a DAO that only for people who love black and
+                    white photo. Only people who have certain NFT can enter this
+                    DAO.
+                  </p>
+                  <div className="flex items-center justify-center sm:justify-start gap-2 mt-4 ">
+                    <a
+                      href="https://bnwdao.vercel.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className=" button3"
+                    >
+                      Demo
+                    </a>
+                    <a
+                      href="https://github.com/Mudennn/buildspace-dao-starter"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="button4"
+                    >
+                      Github
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="overflow-hidden transition-shadow duration-300 bg-white shadow-lg rounded-lg">
+                <Image
+                  src={img3}
+                  className="h-40 w-full rounded-md object-cover aspect-video"
+                  alt="teztrack"
+                />
+                <div className="p-5 border border-t-0">
+                  <p className="mb-3 font-bold text-black tracking-wide uppercase">
+                    NFT Marketplace
+                  </p>
+                  <p className="mb-3 text-gray-700 text-sm">
+                    Marketplace tha allows users to buy, sell and trade unique
+                    digital items that represented by an NFT. Deployed on georli
+                    testnet.
+                  </p>
+                  <div className="flex items-center justify-center sm:justify-start gap-2 mt-4 ">
+                    <a
+                      href="https://muden-nftmarketplace.vercel.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className=" button3"
+                    >
+                      Demo
+                    </a>
+                    <a
+                      href="https://github.com/Mudennn/Personal-Project/tree/main/NFT-Marketplace"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="button4"
+                    >
+                      Github
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
-          </section>
-
-          {/* NFT Gallery  */}
-          <section>
-            <h3 className="font-bold text-center text-3xl mb-4 text-white">
-              NFT Gallery 📸
-            </h3>
-            <hr className="my-4 mx-auto w-48 h-1 bg-gray-100 rounded border-0 "></hr>
-            <Swiper
-              slidesPerView={3}
-              spaceBetween={30}
-              slidesPerGroup={3}
-              breakpoints={{
-                320: {
-                  slidesPerView: 1,
-                  slidesPerGroup: 1,
-                },
-                480: {
-                  slidesPerView: 3,
-                  spaceBetween: 30,
-                  slidesPerGroup: 3,
-                },
-              }}
-              loop={true}
-              loopFillGroupWithBlank={true}
-              grabCursor={true}
-              pagination={{
-                clickable: true,
-                dynamicBullets: true,
-              }}
-              navigation={true}
-              modules={[Pagination, Navigation]}
-              className="mySwiper"
-            >
-              <SwiperSlide>
-                <Image src={img6} alt="Alchemy University" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <Image src={img14} alt="LearnWeb3 DAO" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <Image src={img15} alt="LearnWeb3 DAO" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <Image src={img16} alt="RoachPunks" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <Image src={img9} alt="Gamers King" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <Image src={img10} alt="Gamers King" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <Image src={img11} alt="Prime Yooted" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <Image src={img12} alt="Prime Yooted" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <Image src={img13} alt="Prime Yooted" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <Image src={img7} alt="BirdBird" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <Image src={img8} alt="Mixoman" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <Image src={img17} alt="Crime Scene" />
-              </SwiperSlide>
-            </Swiper>
-          </section>
-
-          {/* Form  */}
-          <section className="container py-12 mx-auto">
-            <div className="lg:w-full mx-5 md:mx-auto border-2 p-5 rounded-xl md:flex md:items-center md:justify-center gap-7 md:gap-20 grid">
-              <div className="my-auto ">
-                <h1 className="text-3xl font-semibold capitalize text-white lg:text-4xl">
-                  Let’s talk
-                </h1>
-
-                <p className="mt-4 text-white border-b-2 pb-2 w-40">
-                  Ask me anything!
-                </p>
-              </div>
-
-              <form className="">
-                <div className="-mx-2 md:items-center md:flex">
-                  <div className="flex-1 px-2">
-                    <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
-                      Full Name
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="John Doe"
-                      className="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm text-white focus:border-blue-600 focus:outline-none focus:ring-0"
-                    />
-                  </div>
-
-                  <div className="flex-1 px-2 mt-4 md:mt-0">
-                    <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
-                      Email address
-                    </label>
-                    <input
-                      type="email"
-                      placeholder="johndoe@example.com"
-                      className="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm text-white focus:border-blue-600 focus:outline-none focus:ring-0"
-                    />
-                  </div>
-                </div>
-
-                <div className="w-full mt-4">
-                  <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
-                    Message
-                  </label>
-                  <textarea
-                    className="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm text-white focus:border-blue-600 focus:outline-none focus:ring-0"
-                    placeholder="Message"
-                  ></textarea>
-                </div>
-
-                <button className="w-full px-6 py-3 mt-4 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-md hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
-                  get in touch
-                </button>
-              </form>
-            </div>
-          </section>
+          </div>
         </section>
 
-        <footer className="py-4 border-t-2 bg-violet-400 text-white">
+        {/* form  */}
+        <section className="px-4 py-10 mx-6 sm:mx-auto max-w-2xl sm:px-6 md:px-12 lg:px-24  my-12 shadow-lg border-2 border-black rounded-lg">
+          <div className="grid justify-center text-center mb-10">
+            <h3 className="text-3xl font-semibold capitalize  lg:text-4xl">
+              Let’s talk
+            </h3>
+            <p className="mt-4 text-center border-b-2 pb-2 w-40">
+              Ask me anything!
+            </p>
+          </div>
+          <form ref={form} onSubmit={sendEmail}>
+            <div className="-mx-2 md:items-center md:flex">
+              <div className="flex-1 px-2">
+                <label className="block mb-2 text-sm">Full Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="John Doe"
+                  className="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm focus:border-blue-600 focus:outline-none focus:ring-0"
+                />
+              </div>
+
+              <div className="flex-1 px-2 mt-4 md:mt-0">
+                <label className="block mb-2 text-sm ">Email address</label>
+                <input
+                  type="email"
+                  name="user_email"
+                  placeholder="johndoe@example.com"
+                  className="block w-full  border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm  focus:border-blue-600 focus:outline-none focus:ring-0"
+                />
+              </div>
+            </div>
+
+            <div className="w-full mt-4">
+              <label className="block mb-2 text-sm">Message</label>
+              <textarea
+                name="message"
+                className="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm  focus:border-blue-600 focus:outline-none focus:ring-0"
+                placeholder="Message"
+              ></textarea>
+            </div>
+
+            <input
+              type="submit"
+              value="Send"
+              className="button4 mt-4 text-sm font-medium tracking-wide text-white capitalize "
+            />
+            {/* get in touch */}
+          </form>
+        </section>
+
+        <footer className="py-4 border-t-2 bg-black text-white">
           <p className="text-center">
             Muden<span className="text-sm">©</span> 2022
           </p>
         </footer>
+
       </main>
       {/* im a developer but not just usual developer  */}
     </div>
