@@ -200,12 +200,12 @@ const Home = () => {
               <div className="flex flex-col justify-center md:pr-8 xl:pr-0 lg:max-w-lg">
                 <div className="max-w-xl mb-6">
                   <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
-                    Web3 Enthusiast
-                    <br className="hidden md:block" />
-                    Seeking New Challenges!{" "}
+                    About Me
+                    {/* <br className="hidden md:block" />
+                    Seeking New Challenges!{" "} */}
                   </h2>
                   <p className="text-base leading-relaxed  text-gray-500 md:text-lg">
-                    While I&apos;m still new to the industry, I already gained
+                    I&apos;m still new to the industry, I already gained
                     valuable experience through personal projects, online
                     resources, and participation in incubator programs (TZAPAC
                     and MDEC ideaKita). I also contributed to the development of
@@ -332,7 +332,7 @@ const Home = () => {
 
         {/* Hackathon  */}
         <section className="mt-20 ">
-          <div className=" border-2 border-black w-[15rem] sm:w-[32rem] mx-auto p-4 rounded-lg z-10 -mb-8">
+          <div className=" border-2 border-black w-[15rem] sm:w-[32rem] mx-auto p-4 rounded-lg z-10 -mb-6 md:-mb-6 lg:-mb-10 ">
             <h3 className="text-xl sm:text-3xl font-bold text-center ">
               Hackathon 🚀
             </h3>
@@ -400,7 +400,7 @@ const Home = () => {
 
         {/* web3 project  */}
         <section className="mt-12">
-          <div className="border-2 border-black w-[15rem] sm:w-[32rem] mx-auto p-4 rounded-lg z-10 -mb-5 sm:-mb-14">
+          <div className="border-2 border-black w-[15rem] sm:w-[32rem] mx-auto p-4 rounded-lg z-10 -mb-6 md:-mb-6 lg:-mb-10">
             <h3 className="text-xl sm:text-3xl font-bold text-center ">
               Web3 Project 🚀
             </h3>
