@@ -1,7 +1,6 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 import Head from "next/head";
-
 import {
   AiFillTwitterCircle,
   AiFillLinkedin,
@@ -16,7 +15,6 @@ import img5 from "../public/mdec.png";
 import img6 from "../public/Alchemy.png";
 import img7 from "../public/sekolah.jpeg";
 import img8 from "../public/sekolah2.jpeg";
-
 import img18 from "../public/teztrack.png";
 import img19 from "../public/Hack.png";
 import img20 from "../public/RHB.jpg";
@@ -30,8 +28,16 @@ import {
 } from "react-icons/si";
 import Link from "next/link";
 
+const Result = () => {
+  return (
+    <div className="text-xs">
+      Your message has been succesfully sent. I will contact you soon!
+    </div>
+  );
+};
+
 const Home = () => {
-  const {form} = useRef();
+  const [result, setResult] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -40,20 +46,25 @@ const Home = () => {
       .sendForm(
         "service_fffl9yr",
         "template_3x6hyf4",
-        form.current,
+        e.target,
         "JpKGWHez2QnKag4MD"
       )
       .then(
         (result) => {
           console.log("message sent!", result.text);
-          alert("Your message has been sent!");
-          e.target.reset();
         },
         (error) => {
           console.log(error.text);
         }
       );
+    // alert("Your message has been sent!");
+    e.target.reset();
+    setResult(true);
   };
+
+  setTimeout(() => {
+    setResult(false);
+  }, 5000);
 
   return (
     <div>
@@ -521,7 +532,7 @@ const Home = () => {
               Ask me anything!
             </p>
           </div>
-          <form ref={form} onSubmit={sendEmail}>
+          <form onSubmit={sendEmail}>
             <div className="-mx-2 md:items-center md:flex">
               <div className="flex-1 px-2">
                 <label className="block mb-2 text-sm">Full Name</label>
@@ -552,13 +563,15 @@ const Home = () => {
                 placeholder="Message"
               ></textarea>
             </div>
-
-            <input
-              type="submit"
-              value="Send"
-              className="button4 mt-4 text-sm font-medium tracking-wide text-white capitalize "
-            />
-            {/* get in touch */}
+            <div className="flex gap-5 items-center flex-wrap ">
+              <input
+                type="submit"
+                value="Send"
+                className="button4 mt-4 text-sm font-medium tracking-wide text-white capitalize "
+              />
+              {/* get in touch */}
+              <div className="mt-0 sm:mt-4">{result ? <Result /> : null}</div>
+            </div>
           </form>
         </section>
 
@@ -567,11 +580,10 @@ const Home = () => {
             Muden<span className="text-sm">©</span> 2022
           </p>
         </footer>
-
       </main>
       {/* im a developer but not just usual developer  */}
     </div>
   );
-}
+};
 
-export default Home
+export default Home;
