@@ -31,7 +31,7 @@ import {
 import Link from "next/link";
 
 const Home = () => {
-  const form = useRef();
+  const {form} = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
